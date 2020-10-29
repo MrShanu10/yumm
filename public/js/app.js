@@ -93,6 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+console.log("Hello Resources app.js");
 
 /***/ }),
 

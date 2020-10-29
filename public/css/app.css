@@ -40,3 +40,34 @@ section.hero {
   color: white;
 }
 
+.order-now {
+  border: 2px solid pink;
+  background: #FF335B;
+  transition: all 0.3s ease-in-out;
+}
+
+.order-now:hover {
+  background: pink;
+}
+
+section.cart {
+  background: #F9D8CB;
+}
+
+section.cart .amount {
+  color: #FF335B;
+}
+
+section.login {
+  background: #F9D8CB;
+  min-height: 86vh;
+}
+
+section.login a {
+  color: #FF335B;
+}
+
+section.login a:hover {
+  color: pink;
+}
+

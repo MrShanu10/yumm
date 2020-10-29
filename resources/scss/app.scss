@@ -38,3 +38,30 @@ section.hero{
         color: $pure;
     }
 }
+
+.order-now{
+    border: 2px solid $primary;
+    background: $primary-hover;
+    transition: $smooth;
+    &:hover{
+        background: $primary;
+    }
+}
+
+section.cart{
+    background: $secondary;
+    .amount{
+        color:$primary-hover;
+    }
+}
+
+section.login{
+    background: $secondary;
+    min-height: 86vh;
+    a{
+        color: $primary-hover;
+        &:hover{
+            color: $primary;
+        }
+    }
+}
