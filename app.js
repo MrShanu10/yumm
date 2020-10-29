@@ -8,7 +8,7 @@ const app = express();
 app.get('/',(req,res) => {
     res.render('homepage');
 })
-
+app.use(express.static('public'))
 app.use(ejsLayout);
 app.set('views',path.join(__dirname,'/resources/views'));
 console.log(path.join(__dirname,'/resources/views'))
