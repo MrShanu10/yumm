@@ -39,6 +39,12 @@ app.use(session({
         maxAge: 1000 * 60 * 60 * 24 //24 hours
     }
 }))
+
+//Global middleware
+app.use((req, res, next) => {
+    res.locals.session = req.session
+    next();
+})
 app.use(express.static('public'))
 app.use(ejsLayout);
 app.set('views',path.join(__dirname,'/resources/views'));

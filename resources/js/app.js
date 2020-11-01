@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Noty from 'noty';
 
 let cartCounter = document.getElementById('cartCounter');
 let addToCart = document.querySelectorAll('.add-to-cart');
@@ -13,5 +14,17 @@ function updateCart(icecream){
     axios.post('/update-cart',icecream)
     .then( res => {
         cartCounter.innerText = res.data.totalQty;
+        new Noty({
+            type: 'success',
+            text: 'Item added to cart',
+            timeout: 900
+        }).show();
+    })
+    .catch((err) => {
+        new Noty({
+            type: 'error',
+            text: 'Something went wrong',
+            timeout: 900
+        }).show();
     })
 }
