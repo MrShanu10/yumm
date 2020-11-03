@@ -4,6 +4,7 @@ const ejsLayout = require('express-ejs-layouts');
 const path = require('path');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const passport = require('passport');
 require('dotenv').config();
 const flash = require('express-flash');
 const { MongoStore } = require('connect-mongo');
@@ -28,7 +29,9 @@ mongoose.connect(url,
         collection: 'sessions'
     })
 const app = express();
+
 app.use(flash());
+app.use(express.urlencoded({ extended: false}))
 app.use(express.json());
 app.use(session({
     secret: process.env.COOKIE_SECRET,
@@ -40,9 +43,16 @@ app.use(session({
     }
 }))
 
+// Passport Config
+const passportInit = require('./app/config/passport')
+passportInit(passport);
+app.use(passport.initialize());
+app.use(passport.session());
+
 //Global middleware
 app.use((req, res, next) => {
     res.locals.session = req.session
+    res.locals.user = req.user
     next();
 })
 app.use(express.static('public'))

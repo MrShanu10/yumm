@@ -4,19 +4,19 @@ const menuSchema = new mongoose.Schema({
 
     name: { 
         type: String,
-        reuired: true
+        required: true
     },
     image: { 
         type: String,
-        reuired: true
+        required: true
     },
     price: { 
         type: Number,
-        reuired: true
+        required: true
     },
     size: { 
         type: String,
-        reuired: true
+        required: true
     }
 })
 
