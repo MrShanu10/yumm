@@ -9,8 +9,7 @@ require('dotenv').config();
 const flash = require('express-flash');
 const { MongoStore } = require('connect-mongo');
 const MongodbStore = require('connect-mongo')(session);
-const url='mongodb+srv://Shivendra:shivendra@cluster0.keeq1.mongodb.net/yumm?retryWrites=true&w=majority';
-mongoose.connect(url, 
+mongoose.connect(process.env.DATABASEURL, 
     {
         useNewUrlParser: true, 
         useCreateIndex: true, 
