@@ -28,3 +28,10 @@ function updateCart(icecream){
         }).show();
     })
 }
+
+const alertMsg = document.getElementById('success-alert');
+if(alertMsg){
+    setTimeout(() => {
+        alertMsg.remove()
+    },2000)
+}

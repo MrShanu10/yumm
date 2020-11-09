@@ -5284,6 +5284,14 @@ function updateCart(icecream) {
   });
 }
 
+var alertMsg = document.getElementById('success-alert');
+
+if (alertMsg) {
+  setTimeout(function () {
+    alertMsg.remove();
+  }, 2000);
+}
+
 /***/ }),
 
 /***/ "./resources/scss/app.scss":

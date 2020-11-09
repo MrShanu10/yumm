@@ -47,6 +47,11 @@ function authController(){
             console.log(req.body);
         },
         userLogin: function(req, res, next){
+            const {email, password} = req.body;
+            if(!email || !password){
+                req.flash('error', 'All fileds are required');
+                return res.redirect('/login');
+            }
             passport.authenticate('local', (error, user, info) => {
                 if(error){
                     req.flash('error', info.message);
